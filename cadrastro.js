@@ -3,20 +3,20 @@ const $ = (elemento) => document.querySelector(elemento);
 $("#cadastro").addEventListener("click", (ev) => {
   ev.preventDefault();
 
-  const nome = $("#nome").value;
-  const email = $("#email").value;
-  const login = $("#login").value;
-  const senha = $("#senha").value;
-  const confirmaSenha = $("#confirma-senha").value;
+  let nome = $("#nome").value;
+  let email = $("#email").value;
+  let login = $("#login").value;
+  let senha = $("#senha").value;
+  let confirmaSenha = $("#confirma-senha").value;
 
-  const senhaConfirmada = senha === confirmaSenha;
+  let senhaConfirmada = senha === confirmaSenha;
 
   if (!senhaConfirmada) {
     alert("Sua confirmação de senha não confere.\nPor favor verifique.");
     return;
   }
 
-  const tudoPreenchido =
+  let tudoPreenchido =
     nome.length !== 0 &&
     email.length !== 0 &&
     login.length !== 0 &&
@@ -28,7 +28,7 @@ $("#cadastro").addEventListener("click", (ev) => {
     return;
   }
 
-  const usuarioCadastrado = {
+  let usuarioCadastrado = {
     email,
     nome,
     login,
@@ -36,7 +36,7 @@ $("#cadastro").addEventListener("click", (ev) => {
     confirmaSenha,
   };
 
-  const string = JSON.stringify(usuarioCadastrado);
+ let string = JSON.stringify(usuarioCadastrado);
   localStorage.setItem("usuario", string);
 
   alert("Cadastro realizado com sucesso!");

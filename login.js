@@ -3,12 +3,12 @@ const $ = (elemento) => document.querySelector(elemento);
 $("#entrar").addEventListener("click", (ev) => {
   ev.preventDefault();
 
-  const string = localStorage.getItem("usuario");
-  const usuarioCadastrado = JSON.parse(string);
+  let string = localStorage.getItem("usuario");
+  let usuarioCadastrado = JSON.parse(string);
 
-  const { login, senha } = usuarioCadastrado;
+  let { login, senha } = usuarioCadastrado;
 
-  const dadosCorretos =
+  let dadosCorretos =
     login === $("#login").value && senha === $("#senha").value;
   console.log(dadosCorretos);
 
